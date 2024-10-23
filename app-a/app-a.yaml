@@ -27,3 +27,7 @@ spec:
         image: nginx:1.19
         ports:
         - containerPort: 80
+        command: ["/bin/sh"]
+        args:
+        - "-c"
+        - "sleep 120 && nginx -g 'daemon off;'"
