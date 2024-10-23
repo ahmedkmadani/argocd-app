@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: app-a
-        image: nginx:1.19
+        image: ngin
         ports:
         - containerPort: 80
         command: ["/bin/sh"]
