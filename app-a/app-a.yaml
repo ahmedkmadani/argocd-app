@@ -26,10 +26,7 @@ spec:
     spec:
       containers:
       - name: app-a
-        image: nginx
+        image: ngin
         ports:
         - containerPort: 80
-        command: ["/bin/sh"]
-        args:
-        - "-c"
-        - "sleep 120 && nginx -g 'daemon off;'"
+
