@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: wait-for-app-a
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+spec:
+  template:
+    spec:
+      containers:
+      - name: wait-for-app-a
+        image: bitnami/kubectl:latest
+        command: ["/bin/sh", "-c"]
+        args:
+        - "kubectl wait --for=condition=available --timeout=600s deployment/app-a -n default"
+      restartPolicy: Never
+  backoffLimit: 3
